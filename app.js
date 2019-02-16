@@ -25,13 +25,23 @@ app.use('/food', foodRoutes);
 app.use('/login',loginRoutes);
 
 
-
+app.use('/logout',(req,res)=>{
+	res.logout();
+	res.redirect('/');
+});
 
 // create home route
 app.get('/', (req, res) => {
     res.send('test');
 });
 
+app.post('nearbyFood',(req,res)=>{
+	var lat = req.latitude;
+	var long = req.longitude;
+	var radius = req.radius;
+	
+	
+});
 //app.get('/profile',(req,res)=>{
 //	res.send('profile page');
 //});
