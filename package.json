@@ -18,6 +18,8 @@
   "homepage": "https://github.com/r0b3rt24/UncommonHacks#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0"
   }
 }
