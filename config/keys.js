@@ -5,5 +5,8 @@ module.exports = {
         },
 		mongodb:{
 			dbURL: 'mongodb://localhost:27017/test'
+		},
+		session:{
+			cookieKey: 'hackathon-tinder-food'
 		}
 };
