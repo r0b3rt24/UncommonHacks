@@ -1,0 +1,23 @@
+{
+  "name": "tinder-food",
+  "version": "1.0.0",
+  "description": "Project for UncommonHacks 2019, Team Member: Han Cao, Ruoyu He, Kesong Cao, Yuheng Chen",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r0b3rt24/UncommonHacks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/r0b3rt24/UncommonHacks/issues"
+  },
+  "homepage": "https://github.com/r0b3rt24/UncommonHacks#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
