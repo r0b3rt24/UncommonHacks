@@ -13,6 +13,7 @@ const mysql = require('mysql');
 
 var con = mysql.createConnection({
 	host:'34.73.28.238',
+	dbName:'uncommon',
 	user:'testuser',
 	password:'unHacks19.'
 });
