@@ -1,22 +1,41 @@
 import React, { Component } from "react";
-import { Button } from "react-native";
+import { Button, StyleSheet, View, Dimensions } from "react-native";
 
-export class ButtonBar extends Component {
+export default class ButtonBar extends Component {
   render() {
+    let width = .9*Dimensions.get('screen').width;
+
+
+    const styles = StyleSheet.create({
+      buttonContainer: {
+        // display: 'none',
+        width: width,
+
+        flex: 0,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        backgroundColor: '#F5FCFF'
+      },
+      button: {
+        backgroundColor: '#000',
+        padding: 300
+      }
+    })
+
     return (
-      <View>
+      <View style = {styles.buttonContainer}>
         <Button
-          onPress={onPressLearnMore}
-          title="Learn More"
-          color="#841584"
+          style = {styles.button}
+          title="Love"
+          color="hotpink"
           accessibilityLabel="Learn more about this purple button"
-        />
+        ></Button>
         <Button
-          onPress={onPressLearnMore}
-          title="Learn More"
-          color="#841584"
+          style = {styles.button}
+          title="Hate"
+          color="black"
           accessibilityLabel="Learn more about this purple button"
-        />
+        ></Button>
       </View>
     );
   }
