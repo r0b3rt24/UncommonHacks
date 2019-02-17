@@ -21,10 +21,28 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  state = {
+    location: null
+  };
+
+  findCoordinates = () => {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        const location = JSON.stringify(position);
+
+        this.setState({ location });
+      },
+      error => Alert.alert(error.message),
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
+    );
+  };
+
+  onClick= () => this.setState({count: count + 1})
+
   render() {
     return (
       <View style={styles.container}>
-        <Card style={styles.card} />
+        <Card name="Running Human" place="Moon" price="$ $ $" style={styles.card} />
         <View style = {{flexDirection: 'row'}}>
           <Button title="Like"></Button>
           <Button title="Hate"></Button>

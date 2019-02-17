@@ -42,10 +42,10 @@ export default class Card extends Component{
                     style={styles.img}
                     source={{uri: 'https://static1.squarespace.com/static/56227557e4b0007a00065273/58cf33b029687fc957dcb83e/58cf38bdf7e0ab911f7a1123/1489975789154/yuri-shwedoff-return-internet.jpg?format=2500w'}}
                   />
-                <Text style={styles.words}>Static message</Text>
+                <Text style={styles.words}>{this.props.name}</Text>
                 <View style={styles.textWrapper}>
-                    <Text style={styles.words}>Restaurant name</Text>
-                    <Text style={styles.words}>$ $ $</Text>
+                    <Text style={styles.words}>{this.props.place}</Text>
+                    <Text style={styles.words}>{this.props.price}</Text>
                 </View>
             </View>
             </View>
