@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, StyleSheet, View, Dimensions } from "react-native";
+import { Button, StyleSheet, View, Dimensions, TouchableNativeFeedback } from "react-native";
 
 export default class ButtonBar extends Component {
   render() {
@@ -14,9 +14,11 @@ export default class ButtonBar extends Component {
         flex: 0,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        
       },
       button: {
         backgroundColor: '#777',
+
       }
     })
 
