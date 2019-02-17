@@ -50,12 +50,12 @@ export default class Card extends Component{
             <View style={styles.card} >
                 <Image
                     style={styles.img}
-                    source={{uri: 'https://static1.squarespace.com/static/56227557e4b0007a00065273/58cf33b029687fc957dcb83e/58cf38bdf7e0ab911f7a1123/1489975789154/yuri-shwedoff-return-internet.jpg?format=2500w'}}
+                    source={{uri: this.props.uri}}
                   />
-                <Text style={styles.caption}>Static message</Text>
+                <Text style={styles.caption}>{ this.props.caption }</Text>
                 <View style={styles.textWrapper}>
-                    <Text style={styles.subtext}>Restaurant name</Text>
-                    <Text style={[styles.subtext,{color: 'lightgreen'}]}>$$</Text>
+                    <Text style={styles.subtext}>{ this.props.restaurant }</Text>
+                    <Text style={[styles.subtext,{color: 'lightgreen'}]}>{ this.props.price }</Text>
                 </View>
             </View>
             </View>
