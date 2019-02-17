@@ -18,7 +18,7 @@ var con = mysql.createConnection({
 	password:'unHacks19.'
 });
 
-
+let photo = [];
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -50,21 +50,35 @@ app.post('/nearbyFood',(req,res)=>{
 	var lat = req.latitude;
 	var long = req.longitude;
 	var radius = req.radius || 0.4;
-//	var 
 	var query = `select photo_id from combined where postal_code = 53715 and abs(latitude-43.0756264) < 0.04 and abs(longitude+89.400817) < 0.04`;
 
 	con.connect((err)=>{
-		if(err) throw err;
+		if (err) continue; //WARNING: this one has problem
 		console.log('connected to the MySQL');
 		con.query(query, (err, result)=>{
-			if (err) throw err;
-			res.send(result);
+			if (err) continue; //WARNING: this one has problem
+			result.forEach((image)=>{
+				photo.push(image);
+			});
+			var answer = result[0];
+			if(answer){
+				result = result.splice(1);
+				res.send(answer);
+			}else{
+				res.send('no food available');
+			}
 		});
 	});
 });
-//app.get('/profile',(req,res)=>{
-//	res.send('profile page');
-//});
+app.get('/next',(req,res)=>{
+	var answer = result[0];
+	if(answer){
+		result = result.splice(1);
+		res.send(answer);
+	}else{
+		res.send('no food available');
+	}
+});
 
 	
 app.listen(port, () => {
