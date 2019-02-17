@@ -53,10 +53,10 @@ app.post('/nearbyFood',(req,res)=>{
 	var query = `select photo_id from combined where postal_code = 53715 and abs(latitude-43.0756264) < 0.04 and abs(longitude+89.400817) < 0.04`;
 
 	con.connect((err)=>{
-		if (err) continue; //WARNING: this one has problem
+		if (err); //WARNING: this one has problem
 		console.log('connected to the MySQL');
 		con.query(query, (err, result)=>{
-			if (err) continue; //WARNING: this one has problem
+			if (err); //WARNING: this one has problem
 			result.forEach((image)=>{
 				photo.push(image);
 			});
