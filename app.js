@@ -11,11 +11,10 @@ const port = process.env.PORT || 3000;
 const passport = require('passport');
 const mysql = require('mysql');
 
-const query = 'select photo_id from combined where postal_code = 53715 and abs(latitude-43.0756264) < 0.04 and abs(longitude+89.400817) < 0.04';
 var con = mysql.createConnection({
-	host:'',
-	user:'',
-	password:''
+	host:'http://34.73.28.238',
+	user:'testuser',
+	password:'unHacks19.'
 });
 
 
@@ -46,11 +45,13 @@ app.get('/', (req, res) => {
     res.send('test');
 });
 
-app.post('nearbyFood',(req,res)=>{
+app.post('/nearbyFood',(req,res)=>{
 	var lat = req.latitude;
 	var long = req.longitude;
 	var radius = req.radius || 0.4;
 	
+	var query = `select photo_id from combined where postal_code = 53715 and abs(latitude-43.0756264) < 0.04 and abs(longitude+89.400817) < 0.04`;
+
 	con.connect((err)=>{
 		if(err) throw err;
 		console.log('connected to the MySQL');
