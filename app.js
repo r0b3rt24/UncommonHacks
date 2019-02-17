@@ -9,6 +9,17 @@ const loginRoutes = require('./routes/login-routes');
 const cookieSession = require('cookie-session');
 const port = process.env.PORT || 3000;
 const passport = require('passport');
+const mysql = require('mysql');
+
+const query = 'select photo_id from combined where postal_code = 53715 and abs(latitude-43.0756264) < 0.04 and abs(longitude+89.400817) < 0.04';
+var con = mysql.createConnection({
+	host:'',
+	user:'',
+	password:''
+});
+
+
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -38,9 +49,16 @@ app.get('/', (req, res) => {
 app.post('nearbyFood',(req,res)=>{
 	var lat = req.latitude;
 	var long = req.longitude;
-	var radius = req.radius;
+	var radius = req.radius || 0.4;
 	
-	
+	con.connect((err)=>{
+		if(err) throw err;
+		console.log('connected to the MySQL');
+		con.query(sql, (err, result)=>{
+			if (err) throw err;
+			res.send(result);
+		});
+	});
 });
 //app.get('/profile',(req,res)=>{
 //	res.send('profile page');
