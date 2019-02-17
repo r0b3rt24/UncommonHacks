@@ -11,17 +11,15 @@ export default class Card extends Component{
                 padding: 0,
                 flexDirection: 'column',
                 alignItems: 'center',     
-                borderWidth: 1,
                 borderRadius: 10,
-                shadowOpacity: 0.75,
-                shadowRadius: 5,
-                shadowColor: 'red',
-                shadowOffset: { height: 0, width: 0 },
+                backgroundColor: '#fff',
             },
             img: {
                 height: 300, 
                 width: 300,
-                borderRadius: 10
+                overflow: 'hidden',
+                borderTopLeftRadius: 10,
+                borderTopRightRadius: 10
             },
             textWrapper: {
                 height: 50,
@@ -37,7 +35,7 @@ export default class Card extends Component{
 
         });
         return(
-            <View style={styles.card} shadowColor={'black'} shadowRadius={100} shadowOpacity={.75} shadowOffset={{ height: 0, width: 0 }}>
+            <View style={styles.card} shadowColor={'grey'} shadowRadius={3} shadowOpacity={.75} shadowOffset={{ height: 2, width: 1 }}>
                 <Image
                     style={styles.img}
                     source={{uri: 'https://static1.squarespace.com/static/56227557e4b0007a00065273/58cf33b029687fc957dcb83e/58cf38bdf7e0ab911f7a1123/1489975789154/yuri-shwedoff-return-internet.jpg?format=2500w'}}
