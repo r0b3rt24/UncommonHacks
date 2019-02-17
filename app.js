@@ -60,9 +60,9 @@ app.post('/nearbyFood',(req,res)=>{
 			result.forEach((image)=>{
 				photo.push(image);
 			});
-			var answer = result[0];
+			var answer = photo[0];
 			if(answer){
-				result = result.splice(1);
+				photo = photo.splice(1);
 				res.send(answer);
 			}else{
 				res.send('no food available');
@@ -71,9 +71,9 @@ app.post('/nearbyFood',(req,res)=>{
 	});
 });
 app.get('/next',(req,res)=>{
-	var answer = result[0];
+	var answer = photo[0];
 	if(answer){
-		result = result.splice(1);
+		photo = photo.splice(1);
 		res.send(answer);
 	}else{
 		res.send('no food available');
