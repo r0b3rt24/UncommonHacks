@@ -5,7 +5,7 @@ export default class Card extends Component{
 
     
     render(){
-        let xDimension = .8*Dimensions.get('screen').width;
+        let xDimension = .85*Dimensions.get('screen').width;
         let yDimension = .65*Dimensions.get('screen').height;
 
 
@@ -46,7 +46,7 @@ export default class Card extends Component{
 
         });
         return(
-            <View shadowColor={'grey'} shadowRadius={3} shadowOpacity={.75} shadowOffset={{ height: 2, width: 1 }}>
+            <View shadowColor={'black'} shadowRadius={10} shadowOpacity={.75} shadowOffset={{ height: 3, width: 1 }}>
             <View style={styles.card} >
                 <Image
                     style={styles.img}
