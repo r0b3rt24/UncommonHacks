@@ -13,6 +13,8 @@ import { Platform, StyleSheet, Text, View, Image,Button } from "react-native";
 import Card from "./Component/Card";
 import ButtonBar from "./Component/ButtonBar";
 import { createStackNavigator, createAppContainer } from "react-navigation";
+import Dialog from "./Dialog";
+
 
 
 class App extends React.Component {
@@ -31,7 +33,8 @@ export class HomeScreen extends Component {
     name: "LOL",
     place: null,
     price: null,
-    img: "KKKKKK"
+    img: "KKKKKK",
+    loved: false,
     // zFirst: -1,
     // zSecond: 100,
   };
@@ -72,6 +75,7 @@ export class HomeScreen extends Component {
       .then(data => this.setState({ 
         img: data.url,
         name: data.caption ? data.caption : "",
+        place: data.name
        }));
   }
 
@@ -80,24 +84,29 @@ export class HomeScreen extends Component {
     this.getNext();
   };
 
+  toLove = () => {
+    this.setState({
+      loved: true,
+    })
+  }
+
+  toNotLove = () => {
+    this.setState({
+      loved: false,
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
-      {/* <Text>Geo: {this.state.location}</Text> */}
-        {/* <Card pos="absolute" zIndex={this.state.zFirst} uri="https://static1.squarespace.com/static/56227557e4b0007a00065273/58cf33b029687fc957dcb83e/58cf38bdf7e0ab911f7a1123/1489975789154/yuri-shwedoff-return-internet.jpg?format=2500w" caption="Running Human" restaurant="Moon" price="$$$" style={styles.card} /> */}
-        {/* <Card pos="relative" zIndex={this.state.zSecond} uri="https://static1.squarespace.com/static/56227557e4b0007a00065273/58cf33b029687fc957dcb83e/58cf38c4f7e0ab911f7a119f/1489975789611/yuri-shwedoff-core-i.jpg?format=2500w" caption="Man Facing Wall" restaurant="Hell" price="$$$$$" style={styles.card} /> */}
-        <Card pos="relative" zIndex={this.state.zSecond} uri={ this.state.img } caption={this.state.name} restaurant={this.state.name} price="$$$$$" style={styles.card} />
-        {/* <Button title="test" onPress={this.handle}></Button> */}
-        <ButtonBar  onHandle={() => this.handle()}/>
+        <Dialog name={this.state.name} show={this.state.loved}></Dialog>
+        <Card pos="relative" zIndex={this.state.zSecond} uri={ this.state.img } caption={this.state.name} restaurant={this.state.place} price="$$$$$" style={styles.card} />
+        <ButtonBar onHandle={() => this.handle()}/>
       </View>
     );
   }
 }
 
-// show more details
-iflike= () => {
-  
-}
 
 const styles = StyleSheet.create({
   container: {

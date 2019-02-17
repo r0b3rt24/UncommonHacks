@@ -35,6 +35,9 @@ export default class Card extends Component{
                 color: 'white',
                 paddingTop: 30,
                 paddingBottom: 40,
+                overflow: 'hidden',
+                maxWidth: 0.85*xDimension,
+                maxHeight: 0.3*yDimension 
             },
             textWrapper: {
                 paddingBottom: 15,
