@@ -4,8 +4,6 @@ import { Button, StyleSheet, View, Dimensions, TouchableNativeFeedback } from "r
 export default class ButtonBar extends Component {
   render() {
     let width = .85*Dimensions.get('screen').width;
-
-
     const styles = StyleSheet.create({
       buttonContainer: {
         // display: 'none',
@@ -41,6 +39,7 @@ export default class ButtonBar extends Component {
         >
           <Button
             style = {styles.button}
+            onPress = {this.props.onHandle}
             title="Love"
             color="white"
           />
@@ -53,6 +52,7 @@ export default class ButtonBar extends Component {
         >
           <Button
             style = {styles.button}
+            onPress = {this.props.onHandle}
             title="Hate"
             color="white"
           />
