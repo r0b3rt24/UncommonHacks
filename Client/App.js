@@ -22,9 +22,20 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+
   state = {
-    location: null
+    location: null,
+    zFirst: -1,
+    zSecond: 100,
   };
+
+  componentDidMount() {
+    this.setState({
+      location: this.findCoordinates,
+      zFirst: -1,
+      zSecond: 100,
+    })
+  }
 
   findCoordinates = () => {
     navigator.geolocation.getCurrentPosition(
@@ -38,17 +49,19 @@ export default class App extends Component<Props> {
     );
   };
 
-  onClick= () => this.setState({count: count + 1})
+  onClick = () => {
+    let m = zFirst;
+    this.setState({
+      zFirst: zSecond,
+      zSecond: m,
+    })
+  }
 
   render() {
     return (
       <View style={styles.container}>
-        <Card 
-        uri="https://static1.squarespace.com/static/56227557e4b0007a00065273/58cf33b029687fc957dcb83e/58cf38bdf7e0ab911f7a1123/1489975789154/yuri-shwedoff-return-internet.jpg?format=2500w" 
-        caption="The Escape" 
-        restaurant="Mars" 
-        price="$$$" 
-        style={styles.card} />
+        {/* <Card pos="absolute" zIndex={this.state.zFirst} uri="https://static1.squarespace.com/static/56227557e4b0007a00065273/58cf33b029687fc957dcb83e/58cf38bdf7e0ab911f7a1123/1489975789154/yuri-shwedoff-return-internet.jpg?format=2500w" caption="Running Human" restaurant="Moon" price="$$$" style={styles.card} /> */}
+        <Card pos="relative" zIndex={this.state.zSecond} uri="https://static1.squarespace.com/static/56227557e4b0007a00065273/58cf33b029687fc957dcb83e/58cf38c4f7e0ab911f7a119f/1489975789611/yuri-shwedoff-core-i.jpg?format=2500w" caption="Man Facing Wall" restaurant="Hell" price="$$$$$" style={styles.card} />
         <ButtonBar/>
       </View>
     );

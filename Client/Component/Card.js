@@ -14,6 +14,8 @@ export default class Card extends Component{
 
         const styles = StyleSheet.create({
             card: {
+                zIndex: this.props.zIndex,
+                position: this.props.pos,
                 height: yDimension,
                 flex: 0,
                 padding: 0,
@@ -53,6 +55,7 @@ export default class Card extends Component{
                 shadowRadius={10} 
                 shadowOpacity={.75} 
                 shadowOffset={{ height: 3, width: 1 }}>
+
             <View style={styles.card} >
                 <Image
                     style={styles.img}
