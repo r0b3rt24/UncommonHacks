@@ -43,7 +43,12 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Card uri="https://static1.squarespace.com/static/56227557e4b0007a00065273/58cf33b029687fc957dcb83e/58cf38bdf7e0ab911f7a1123/1489975789154/yuri-shwedoff-return-internet.jpg?format=2500w" caption="Running Human" restaurant="Moon" price="$$$" style={styles.card} />
+        <Card 
+        uri="https://static1.squarespace.com/static/56227557e4b0007a00065273/58cf33b029687fc957dcb83e/58cf38bdf7e0ab911f7a1123/1489975789154/yuri-shwedoff-return-internet.jpg?format=2500w" 
+        caption="The Escape" 
+        restaurant="Mars" 
+        price="$$$" 
+        style={styles.card} />
         <ButtonBar/>
       </View>
     );

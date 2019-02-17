@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, StyleSheet, View, Dimensions } from "react-native";
+import { Button, StyleSheet, View, Dimensions, TouchableNativeFeedback } from "react-native";
 
 export default class ButtonBar extends Component {
   render() {
@@ -17,21 +17,46 @@ export default class ButtonBar extends Component {
       },
       button: {
         backgroundColor: '#777',
+      },
+      wrapper: {
+        paddingLeft: 10,
+        paddingRight: 10,
+        borderRadius: 10,
+      },
+      loveWrapper: {
+        backgroundColor: 'red'
+      },
+      hateWrapper: {
+        backgroundColor: 'grey'
       }
     })
 
     return (
       <View style = {styles.buttonContainer}>
-        <Button
-          style = {styles.button}
-          title="Love"
-          color="hotpink"
-        ></Button>
-        <Button
-          style = {styles.button}
-          title="Hate"
-          color="black"
-        ></Button>
+        <View style = {[styles.loveWrapper, styles.wrapper]}
+              shadowColor={'hotpink'} 
+              shadowRadius={3} 
+              shadowOpacity={.75} 
+              shadowOffset={{ height: 3, width: 1 }}
+        >
+          <Button
+            style = {styles.button}
+            title="Love"
+            color="white"
+          />
+        </View>
+        <View style = {[styles.hateWrapper, styles.wrapper]}
+              shadowColor={'grey'} 
+              shadowRadius={3} 
+              shadowOpacity={.85} 
+              shadowOffset={{ height: 3, width: 1 }}
+        >
+          <Button
+            style = {styles.button}
+            title="Hate"
+            color="white"
+          />
+        </View>
       </View>
     );
   }
