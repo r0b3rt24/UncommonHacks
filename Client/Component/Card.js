@@ -8,6 +8,9 @@ export default class Card extends Component{
         let xDimension = .85*Dimensions.get('screen').width;
         let yDimension = .65*Dimensions.get('screen').height;
 
+        const shadow = {
+
+        }
 
         const styles = StyleSheet.create({
             card: {
@@ -46,7 +49,10 @@ export default class Card extends Component{
 
         });
         return(
-            <View shadowColor={'black'} shadowRadius={10} shadowOpacity={.75} shadowOffset={{ height: 3, width: 1 }}>
+            <View shadowColor={'black'} 
+                shadowRadius={10} 
+                shadowOpacity={.75} 
+                shadowOffset={{ height: 3, width: 1 }}>
             <View style={styles.card} >
                 <Image
                     style={styles.img}
