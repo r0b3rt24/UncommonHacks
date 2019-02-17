@@ -55,7 +55,7 @@ app.post('/nearbyFood',(req,res)=>{
 	con.connect((err)=>{
 		if(err) throw err;
 		console.log('connected to the MySQL');
-		con.query(sql, (err, result)=>{
+		con.query(query, (err, result)=>{
 			if (err) throw err;
 			res.send(result);
 		});
