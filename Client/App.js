@@ -9,9 +9,9 @@
 
 
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View, Image } from "react-native";
+import { Platform, StyleSheet, Text, View, Image,Button } from "react-native";
 import Card from "./Component/Card";
-import { Button } from "react-native";
+import ButtonBar from "./Component/ButtonBar";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -26,10 +26,7 @@ export default class App extends Component<Props> {
     return (
       <View style={styles.container}>
         <Card style={styles.card} />
-        <View style = {{flexDirection: 'row'}}>
-          <Button title="Like"></Button>
-          <Button title="Hate"></Button>
-        </View>
+        <ButtonBar/>
       </View>
     );
   }

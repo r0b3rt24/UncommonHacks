@@ -1,11 +1,17 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, Dimensions} from 'react-native';
 
 export default class Card extends Component{
+
+    
     render(){
+        let xDimension = .8*Dimensions.get('screen').width;
+        let yDimension = .65*Dimensions.get('screen').height;
+
+
         const styles = StyleSheet.create({
             card: {
-                height: '85%',
+                height: yDimension,
                 flex: 0,
                 padding: 0,
                 flexDirection: 'column',
@@ -16,8 +22,8 @@ export default class Card extends Component{
                 overflow: 'hidden',
             },
             img: {
-                height: 300, 
-                width: 300,    
+                height: xDimension, 
+                width: xDimension,    
             },
             caption: {
                 fontSize: 35,
