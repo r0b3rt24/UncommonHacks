@@ -1,6 +1,8 @@
 # UncommonHacks
 Project for UncommonHacks 2019, Team Member: Han Cao, Ruoyu He, Kesong Cao, Yuheng Chen 
 
+![Alt text](WechatIMG2.jpeg?raw=true "Title")
+
 ## Inspiration
 
 Our frond-end designer has always been _troubled_ to decide where to go for dinner. Frustrated and irritated, he decided to create an app that would present him with a range of choices that are **totally random** within walking distance. Hence the app Foodar.
